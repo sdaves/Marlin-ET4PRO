@@ -118,7 +118,7 @@
  *
  * :[2400, 9600, 19200, 38400, 57600, 115200, 250000, 500000, 1000000]
  */
-#define BAUDRATE 115200
+#define BAUDRATE 250000
 #define BAUD_RATE_GCODE     // Enable G-code M575 to set the baud rate
 
 /**
@@ -146,7 +146,7 @@
 #endif
 
 // Name displayed in the LCD "Ready" message and Info menu
-#define CUSTOM_MACHINE_NAME "FearL0rd Anet ET4"
+#define CUSTOM_MACHINE_NAME "Ghost Maker"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -604,9 +604,9 @@
     #define DEFAULT_Kd_LIST { 114.00, 114.00 }
   #else
   // ET4 Autotune PID results
-    #define DEFAULT_Kp 41.38
-    #define DEFAULT_Ki 6.31
-    #define DEFAULT_Kd 67.87
+    #define DEFAULT_Kp 20.54
+    #define DEFAULT_Ki 1.48
+    #define DEFAULT_Kd 71.07
   #endif
 #endif // PIDTEMP
 
@@ -645,9 +645,9 @@
 
   // 120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
   // from FOPDT model - kp=.39 Tp=405 Tdead=66, Tc set to 79.2, aggressive factor of .15 (vs .1, 1, 10)
-  #define DEFAULT_bedKp 50.71
-  #define DEFAULT_bedKi 9.46
-  #define DEFAULT_bedKd 181.20
+  #define DEFAULT_bedKp 75.93
+  #define DEFAULT_bedKi 12.65
+  #define DEFAULT_bedKd 303.71
 
   // FIND YOUR OWN: "M303 E-1 C8 S90" to run autotune on the bed at 90 degreesC for 8 cycles.
 #endif // PIDTEMPBED
@@ -1043,7 +1043,7 @@
  *      - normally-closed switches to GND and D32.
  *      - normally-open switches to 5V and D32.
  */
-//#define Z_MIN_PROBE_PIN 32 // Pin 32 is the RAMPS default
+#define Z_MIN_PROBE_PIN PC3 // Pin 32 is the RAMPS default
 
 /**
  * Probe Type
@@ -1172,7 +1172,7 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET { -40, -12, 0 }
+#define NOZZLE_TO_PROBE_OFFSET { -40, -12, -1.4 }
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
